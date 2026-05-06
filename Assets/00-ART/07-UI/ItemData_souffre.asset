@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: souffre
   description: 
-  icon: {fileID: 21300000, guid: e07183ecf70704e709ae84dff07caec9, type: 3}
+  icon: {fileID: 21300000, guid: f8ef93584c4db432d9a1e0eb504aac4a, type: 3}

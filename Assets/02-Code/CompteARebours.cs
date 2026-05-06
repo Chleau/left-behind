@@ -1,23 +1,28 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(AudioSource))]
 public class CompteARebours : MonoBehaviour
 {
     public float tempsInitial = 60f;
     private float tempsRestant;
     public TextMeshProUGUI texteAffichage;
     public GameObject ecranMort;
-    
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip sonMort;
+
+    private AudioSource _audioSource;
     private bool estFini = false;
-    private bool chronoLance = false; // Le chrono est arrêté par défaut
+    private bool chronoLance = false;
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         tempsRestant = tempsInitial;
-        MettreAJourUI(); // Affiche le temps initial (ex: 01:00)
+        MettreAJourUI();
     }
 
-    // CETTE FONCTION SERA APPELÉE PAR LE BOUTON COMMENCER
     public void LancerChrono()
     {
         chronoLance = true;
@@ -25,7 +30,6 @@ public class CompteARebours : MonoBehaviour
 
     void Update()
     {
-        // On ne fait rien tant que le chrono n'est pas lancé ou s'il est fini
         if (!chronoLance || estFini) return;
 
         if (tempsRestant > 0)
@@ -51,6 +55,10 @@ public class CompteARebours : MonoBehaviour
         estFini = true;
         tempsRestant = 0;
         if (texteAffichage != null) texteAffichage.text = "00:00";
+
+        _audioSource.Stop();
+        if (sonMort != null) _audioSource.PlayOneShot(sonMort);
+
         if (ecranMort != null) ecranMort.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

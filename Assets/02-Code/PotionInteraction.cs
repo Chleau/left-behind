@@ -6,6 +6,7 @@ public class PotionInteraction : MonoBehaviour, IInteractable
 {
     [Header("Audio")]
     [SerializeField] private AudioClip sonBoisson;
+    [SerializeField] private AudioSource musiqueAmbiante;
 
     [Header("Victoire")]
     [Tooltip("Nom exact du GameObject de l'écran de victoire dans la scène.")]
@@ -19,7 +20,13 @@ public class PotionInteraction : MonoBehaviour, IInteractable
     {
         _audioSource = GetComponent<AudioSource>();
 
-        // Cherche y compris les GameObjects inactifs
+        if (musiqueAmbiante == null)
+        {
+            CompteARebours chrono = FindFirstObjectByType<CompteARebours>();
+            if (chrono != null)
+                musiqueAmbiante = chrono.GetComponent<AudioSource>();
+        }
+
         foreach (Transform t in FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             if (t.gameObject.name == nomEcranVictoire && t.gameObject.scene == gameObject.scene)
@@ -42,6 +49,7 @@ public class PotionInteraction : MonoBehaviour, IInteractable
 
     private IEnumerator BoissonEtVictoire()
     {
+        if (musiqueAmbiante != null) musiqueAmbiante.Stop();
         if (sonBoisson != null)
             _audioSource.PlayOneShot(sonBoisson);
 

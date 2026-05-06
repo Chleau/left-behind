@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: cle
   description: 
-  icon: {fileID: 21300000, guid: 1b1fb49ef6bd64e01ba3fc50bf98ea56, type: 3}
+  icon: {fileID: 21300000, guid: 54da975fad8304185b8ad2b9d76dc156, type: 3}
