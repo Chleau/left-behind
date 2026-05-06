@@ -40,10 +40,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         ScanForInteractable();
 
-        // Si un objet est visé et que le joueur appuie sur la touche
-        if (_currentTarget != null && Input.GetKeyDown(interactKey))
+        if (Input.GetKeyDown(interactKey))
         {
-            _currentTarget.Interact(gameObject);
+            Debug.Log($"[PlayerInteraction] E pressé. Target = {(_currentTarget != null ? _currentTarget.GetType().Name : "NULL")}");
+            if (_currentTarget != null)
+                _currentTarget.Interact(gameObject);
         }
     }
 
@@ -60,16 +61,19 @@ public class PlayerInteraction : MonoBehaviour
 
         if (didHit)
         {
-            // Cas 1 : objet utile (implémente IInteractable)
-            if (hit.collider.TryGetComponent(out IInteractable interactable))
+            Debug.Log($"[PlayerInteraction] Raycast hit: {hit.collider.gameObject.name} (layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)})");
+            // Cas 1 : objet utile (implémente IInteractable) — cherche aussi sur les parents
+            IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
+            if (interactable != null)
             {
                 _currentTarget = interactable;
                 ShowPrompt(_currentTarget.GetInteractionPrompt());
                 return;
             }
 
-            // Cas 2 : objet inutile (a un ExaminableObject)
-            if (hit.collider.TryGetComponent(out ExaminableObject examinable))
+            // Cas 2 : objet inutile (a un ExaminableObject) — cherche aussi sur les parents
+            ExaminableObject examinable = hit.collider.GetComponentInParent<ExaminableObject>();
+            if (examinable != null)
             {
                 _currentTarget = null; // Pas d'interaction possible
                 ShowPrompt(examinable.examineMessage);

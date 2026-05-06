@@ -33,6 +33,7 @@ public class CauldronInteraction : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
+        Debug.LogError("DAAAAAAAAAH");
         if (_potionDejaCreee)
         {
             Debug.Log("[Chaudron] La potion a déjà été créée.");
@@ -48,7 +49,7 @@ public class CauldronInteraction : MonoBehaviour, IInteractable
             if (!inventory.HasItem(ingredient))
             {
                 Debug.Log($"[Chaudron] Ingrédient manquant : {ingredient.itemName}");
-                _audioSource.PlayOneShot(sonErreur);
+                if (sonErreur != null) _audioSource.PlayOneShot(sonErreur);
                 return;
             }
         }
