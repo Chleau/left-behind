@@ -9381,7 +9381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef37cabf73dc44b6b7f5e86352a972f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompteARebours
-  tempsInitial: 20
+  tempsInitial: 10
   texteAffichage: {fileID: 1766177581}
   ecranMort: {fileID: 1506879232}
 --- !u!4 &155057447
