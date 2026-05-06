@@ -87084,7 +87084,8 @@ MonoBehaviour:
     vous oppresse la poitrine, comme si l'air lui-m\xEAme refusait de p\xE9n\xE9trer
     vos poumons.\n\nVotre temps est compt\xE9 avant que le poison qui coule dans
     vos veine est termin\xE9 sont chemin. Trouvez de quoi vous soigner avant que
-    vos forces ne vous abandonnent totalement."
+    vos forces ne vous abandonnent totalement.\n\nSerez-vous encore l\xE0 demain
+    ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
