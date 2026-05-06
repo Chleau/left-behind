@@ -7,6 +7,9 @@ public class CoffreSimple : MonoBehaviour, IInteractable
     public Animator animatorCoffre;
     public string nomDuBooleen = "open";
 
+    [Header("Audio")]
+    public AudioSource audioCoffre;
+
     [Header("UI")]
     public GameObject canvaInutile; 
     public string messagePrompt = "Examiner le coffre";
@@ -22,6 +25,12 @@ public class CoffreSimple : MonoBehaviour, IInteractable
         {
             animatorCoffre.SetBool(nomDuBooleen, true);
             estOuvert = true;
+
+            // On lance l'audio
+            if (audioCoffre != null)
+            {
+                audioCoffre.Play();
+            }
         }
 
         // On lance l'affichage temporaire

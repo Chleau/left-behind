@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class CoffreLivre : MonoBehaviour, IInteractable
 {
+    
     [Header("Animation")]
     public Animator animatorCoffre; // L'objet avec l'Animator
+
+    [Header("Audio")] 
+    public AudioSource audioCoffre;
 
     [Header("Contenu")]
     public GameObject livreAApparaitre; // Le livre Book03 avec la recette
@@ -65,6 +69,11 @@ public class CoffreLivre : MonoBehaviour, IInteractable
     private void OuvrirLeCoffre()
     {
         estOuvert = true;
+
+        if (audioCoffre != null)
+        {
+            audioCoffre.Play();
+        }
 
         // On lance l'animation via le paramètre "open" (Bool)
         if (animatorCoffre != null)
