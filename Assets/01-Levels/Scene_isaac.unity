@@ -87080,12 +87080,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous reprenez connaissance dans un lieu inconnu. Une sensation de malaise
-    vous oppresse la poitrine, comme si l'air lui-m\xEAme refusait de p\xE9n\xE9trer
-    vos poumons.\n\nVotre temps est compt\xE9 avant que le poison qui coule dans
-    vos veine est termin\xE9 sont chemin. Trouvez de quoi vous soigner avant que
-    vos forces ne vous abandonnent totalement.\n\nSerez-vous encore l\xE0 demain
-    ?"
+  m_text: "Vous reprenez connaissance dans un lieu inconnu. Une oppression vous broie
+    la poitrine, comme si l\u2019air refusait d\u2019atteindre vos poumons.\n\nLe
+    poison coule d\xE9j\xE0 dans vos veines et chaque seconde vous rapproche de la
+    mort. Trouvez l'antidote avant que ce ne soit trop tard.\n\nSerez-vous encore
+    l\xE0 demain ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
