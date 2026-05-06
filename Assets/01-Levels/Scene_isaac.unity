@@ -87080,11 +87080,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous reprenez connaissance entre ces murs froids. Une sensation de malaise
+  m_text: "Vous reprenez connaissance dans un lieu inconnu. Une sensation de malaise
     vous oppresse la poitrine, comme si l'air lui-m\xEAme refusait de p\xE9n\xE9trer
-    vos poumons.\n\nDans votre main, vous serrez une vieille cl\xE9... Elle semble
-    li\xE9e \xE0 cette bo\xEEte que vous apercevez au loin.\n\nVotre temps est compt\xE9.
-    Trouvez de quoi vous soigner avant que vos forces ne vous abandonnent totalement."
+    vos poumons.\n\nVotre temps est compt\xE9 avant que le poison qui coule dans
+    vos veine est termin\xE9 sont chemin. Trouvez de quoi vous soigner avant que
+    vos forces ne vous abandonnent totalement."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -106428,7 +106428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa708f8d4642444fbfa6186f8d62d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExaminableObject
-  examineMessage: "Un vieux livre poussi\xE9reux"
+  examineMessage: "Un vieux livre poussi\xE9reux qui vous indique d'ouvrir un coffre"
 --- !u!1001 &1853884828
 PrefabInstance:
   m_ObjectHideFlags: 0
